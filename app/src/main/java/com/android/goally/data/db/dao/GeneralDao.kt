@@ -7,6 +7,8 @@ import com.android.goally.data.db.entities.token.Authentication
 
 @Dao
 interface GeneralDao {
+    @Insert
+    fun insertAuthentication(authentication: Authentication?)
     @Query("Select * from authentication")
     fun getAuthenticationLive(): LiveData<Authentication?>
     @Query("Select * from authentication")

@@ -12,8 +12,10 @@ class GeneralRepo(
 
     suspend fun checkHealth() = generalApi.checkHealth()
     suspend fun getToken(userEmail:String) = generalApi.getToken(userEmail)
+    suspend fun getReminders(auth:String) = generalApi.getReminders(auth)
 
 
+    fun insertAuthentication(authentication: Authentication) = generalDao.insertAuthentication(authentication)
     fun getAuthenticationLive() = generalDao.getAuthenticationLive()
     suspend fun getAuthentication() = generalDao.getAuthentication()
 
