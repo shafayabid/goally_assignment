@@ -1,6 +1,7 @@
 package com.android.goally.data.repo
 
 import com.android.goally.data.db.dao.GeneralDao
+import com.android.goally.data.db.entities.reminder.Reminder
 import com.android.goally.data.db.entities.token.Authentication
 import com.android.goally.data.network.rest.api.GeneralApi
 
@@ -16,6 +17,7 @@ class GeneralRepo(
 
 
     fun insertAuthentication(authentication: Authentication) = generalDao.insertAuthentication(authentication)
+    fun insertReminder(reminder: Reminder) = generalDao.insertReminder(reminder)
     fun getAuthenticationLive() = generalDao.getAuthenticationLive()
     suspend fun getAuthentication() = generalDao.getAuthentication()
 

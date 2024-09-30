@@ -1,11 +1,11 @@
 package com.android.goally.data.model.api.response.reminder
 
 data class Schedule(
-    val Fri: Any,
-    val Mon: Any,
-    val Sat: Any,
-    val Sun: Any,
-    val Thu: Any,
-    val Tue: Any,
-    val Wed: Any
+    val Fri: String,
+    val Mon: String,
+    val Sat: String,
+    val Sun: String,
+    val Thu: String,
+    val Tue: String,
+    val Wed: String
 )

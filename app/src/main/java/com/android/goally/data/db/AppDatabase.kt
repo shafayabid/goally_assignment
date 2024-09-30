@@ -6,6 +6,7 @@ import androidx.room.TypeConverters
 import androidx.room.migration.Migration
 import androidx.sqlite.db.SupportSQLiteDatabase
 import com.android.goally.data.db.dao.GeneralDao
+import com.android.goally.data.db.entities.reminder.Reminder
 import com.android.goally.data.db.entities.token.Authentication
 import com.android.goally.util.LogUtil
 import com.getgoally.learnerapp.data.db.DateConverter
@@ -13,11 +14,18 @@ import com.getgoally.learnerapp.data.db.StringListConvert
 
 
 @Database(
-    entities = [Authentication::class],
+    entities = [Authentication::class, Reminder::class],
     version = 1,
     exportSchema = false
 )
-@TypeConverters(DateConverter::class, StringListConvert::class)
+@TypeConverters(
+    DateConverter::class,
+    StringListConvert::class,
+//    DeviceConverter::class,
+    NotificationConverter::class,
+    ReminderNotificationConverter::class,
+//    TagConverter::class
+    )
 abstract class AppDatabase : RoomDatabase() {
 
     abstract fun getGeneralDao(): GeneralDao
