@@ -7,6 +7,29 @@
     android:background="@color/white"
     tools:context=".ui.splash.SplashActivity">
 
+    <com.facebook.shimmer.ShimmerFrameLayout
+        android:id="@+id/shimmer_layout"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:visibility="gone">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <include layout="@layout/reminder_item_shimmer" />
+            <include layout="@layout/reminder_item_shimmer" />
+            <include layout="@layout/reminder_item_shimmer" />
+
+        </LinearLayout>
+
+    </com.facebook.shimmer.ShimmerFrameLayout>
+
     <com.android.goally.customviews.MultiViewPager
         android:id="@+id/vp_reminders"
         android:layout_width="match_parent"

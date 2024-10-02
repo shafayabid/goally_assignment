@@ -139,4 +139,7 @@ dependencies {
 
     //viewpager(legacy)
     implementation 'androidx.viewpager:viewpager:1.0.0'
+
+    //facebook shimmer effect (skeleton loader)
+    implementation 'com.facebook.shimmer:shimmer:0.5.0'
 }

@@ -47,8 +47,7 @@ class HomeActivity : BaseActivity() {
 
     private fun setupViews() {
         binding.run {
-//            tvMessage.text =
-//                getString(R.string.your_work_starts_here_add_or_update_your_own_views_according_to_your_assignment)
+            shimmerLayout.startShimmer()
         }
         val transformer = ScalePageTransformer()
         viewPager = binding.vpReminders
@@ -66,7 +65,12 @@ class HomeActivity : BaseActivity() {
 //        }
 
         generalViewModel.getReminderLive().observe(this) {
+
             it?.let {
+                if(it.isNotEmpty()){
+                    binding.shimmerLayout.stopShimmer()
+                    binding.shimmerLayout.visibility = View.GONE
+                }
                 imageUrlList.clear()
                 it.forEach {
                     Log.d("REMINDER_OBSERVER", "setupObservers: ${it}")
