@@ -15,6 +15,8 @@ import com.android.goally.customviews.MultiViewPager
 import com.android.goally.customviews.ScalePageTransformer
 import com.android.goally.data.db.entities.reminder.Reminder
 import com.android.goally.databinding.ActivityHomeBinding
+import com.android.goally.listener.ReminderClickListener
+import com.android.goally.ui.detail.DetailActivity
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -24,7 +26,15 @@ class HomeActivity : BaseActivity() {
 
     private lateinit var viewPager: MultiViewPager
     private val imageUrlList = mutableListOf<Reminder>()
-    val remindersAdapter = RemindersAdapter(this)
+
+    private val remindersAdapter by lazy{
+        RemindersAdapter(this, object: ReminderClickListener{
+            override fun onReminderClick(reminder: Reminder, position: Int) {
+                goToDetailScreen(reminder.name)
+            }
+
+        })
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -85,6 +95,12 @@ class HomeActivity : BaseActivity() {
 
             override fun onPageScrollStateChanged(state: Int) {}
         })
+    }
+
+    private fun goToDetailScreen(reminderName: String){
+        startActivity(DetailActivity.getCallingIntent(this@HomeActivity).putExtra(
+            "reminderName",reminderName
+        ))
     }
 
     companion object{

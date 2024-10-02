@@ -7,4 +7,9 @@
     <color name="white_onboarding">#FDFCFF</color>
     <color name="grey_onboarding">#7D8E97</color>
 
+
+    <color name="text_primary">#253646</color>
+    <color name="text_secondary">#D95182</color>
+    <color name="text_tertiary">#F8F8F8</color>
+
 </resources>

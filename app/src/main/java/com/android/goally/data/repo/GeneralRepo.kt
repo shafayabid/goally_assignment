@@ -20,6 +20,7 @@ class GeneralRepo(
     fun insertReminder(reminder: Reminder) = generalDao.insertReminder(reminder)
     fun getAuthenticationLive() = generalDao.getAuthenticationLive()
     fun getReminderLive() = generalDao.getReminderLive()
+    fun getReminderByName(name: String) = generalDao.getReminderByName(name)
     suspend fun getAuthentication() = generalDao.getAuthentication()
 
 }

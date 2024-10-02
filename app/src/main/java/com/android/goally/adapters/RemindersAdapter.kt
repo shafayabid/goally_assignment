@@ -7,9 +7,14 @@ import android.view.ViewGroup
 import androidx.viewpager.widget.PagerAdapter
 import com.android.goally.data.db.entities.reminder.Reminder
 import com.android.goally.databinding.ReminderItemBinding
+import com.android.goally.listener.ReminderClickListener
+import com.android.goally.util.setSafeOnClickListener
 import com.bumptech.glide.Glide
 
-class RemindersAdapter(private val context: Context) : PagerAdapter() {
+class RemindersAdapter(
+    private val context: Context,
+    private val clickListener: ReminderClickListener
+) : PagerAdapter() {
 
     private val mImageUrlList = mutableListOf<Reminder>()
     private val viewMap = mutableMapOf<Int, View>()
@@ -34,6 +39,10 @@ class RemindersAdapter(private val context: Context) : PagerAdapter() {
             .into(binding.ivReminderItem)
 
         binding.tvReminderItem.text = mImageUrlList[position].name
+
+        binding.ivReminderItem.setSafeOnClickListener {
+            clickListener.onReminderClick(mImageUrlList[position], position)
+        }
 
         container.addView(binding.root)
         viewMap[position] = binding.root
