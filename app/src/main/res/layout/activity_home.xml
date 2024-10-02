@@ -7,27 +7,14 @@
     android:background="@color/white"
     tools:context=".ui.splash.SplashActivity">
 
-    <TextView
+    <com.android.goally.customviews.MultiViewPager
+        android:id="@+id/vp_reminders"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/tvEmail"
-        android:fontFamily="@font/poppins_semibold"
-        android:textSize="@dimen/_14sdp"
-        android:gravity="center"
-        android:padding="@dimen/_10sdp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:text="Your registered email goes here"/>
-
-    <TextView
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:id="@+id/tvMessage"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        android:layout_height="0dp"
+        app:matchChildWidth="@+id/iv_reminder_item"
         app:layout_constraintBottom_toBottomOf="parent"
-        android:gravity="center"
-        android:layout_marginHorizontal="@dimen/_20sdp"/>
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

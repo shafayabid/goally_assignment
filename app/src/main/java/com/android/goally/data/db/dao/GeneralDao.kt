@@ -14,6 +14,8 @@ interface GeneralDao {
     fun insertReminder(reminder: Reminder)
     @Query("Select * from authentication")
     fun getAuthenticationLive(): LiveData<Authentication?>
+    @Query("Select * from reminder")
+    fun getReminderLive(): LiveData<List<Reminder>?>
     @Query("Select * from authentication")
     suspend fun getAuthentication(): Authentication?
 }

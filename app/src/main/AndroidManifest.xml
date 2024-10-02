@@ -45,7 +45,7 @@
         <activity android:name=".ui.home.HomeActivity"
             android:exported="true"
             android:configChanges="orientation|screenSize|screenLayout|keyboardHidden"
-            android:screenOrientation="portrait"
+            android:screenOrientation="landscape"
             android:stateNotNeeded="true"
             android:windowSoftInputMode="stateAlwaysHidden"/>
 

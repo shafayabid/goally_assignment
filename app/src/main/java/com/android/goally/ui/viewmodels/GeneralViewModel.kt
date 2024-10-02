@@ -243,5 +243,6 @@ class GeneralViewModel @Inject constructor(
 
 
     fun getAuthenticationLive() = generalRepo.getAuthenticationLive()
+    fun getReminderLive() = generalRepo.getReminderLive()
     suspend fun getAuthentication() = generalRepo.getAuthentication()
 }

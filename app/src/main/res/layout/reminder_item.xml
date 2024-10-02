@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <ImageView
+        android:layout_width="@dimen/_200sdp"
+        android:layout_height="@dimen/_100sdp"
+        android:id="@+id/iv_reminder_item"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/tv_reminder_item"/>
+
+    <ImageView
+        android:layout_width="@dimen/_24sdp"
+        android:layout_height="@dimen/_24sdp"
+        android:id="@+id/iv_play_btn"
+        android:src="@drawable/play_btn"
+        android:layout_marginTop="@dimen/_100sdp"
+        app:layout_constraintTop_toTopOf="@+id/iv_reminder_item"
+        app:layout_constraintStart_toStartOf="@+id/iv_reminder_item"
+        app:layout_constraintEnd_toEndOf="@+id/iv_reminder_item"
+        app:layout_constraintBottom_toBottomOf="@+id/iv_reminder_item"/>
+
+    <TextView
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/tv_reminder_item"
+        android:gravity="center"
+        app:layout_constraintStart_toStartOf="@+id/iv_reminder_item"
+        app:layout_constraintEnd_toEndOf="@+id/iv_reminder_item"
+        app:layout_constraintTop_toBottomOf="@+id/iv_reminder_item"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
